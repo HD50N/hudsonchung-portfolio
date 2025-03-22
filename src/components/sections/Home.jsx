@@ -36,7 +36,7 @@ export const Home = () => {
 
                     <div className="flex justify-center space-x-4">
                         <a href="#about" onClick={(e) => handleScroll(e, 'about')} className="bg-[#C60C30] text-white py-3 px-6 rounded font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(254, 221, 0, 0.2)]">
-                            About Me
+                            About Mes
                         </a>
 
                         <a href="#projects" onClick={(e) => handleScroll(e, 'projects')} className="bg-[#FEDD00] text-black py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(198, 12, 48, 0.4)]">
