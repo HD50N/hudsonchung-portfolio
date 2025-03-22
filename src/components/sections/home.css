@@ -1,0 +1,74 @@
+.cherry-blossoms {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cherry-blossom {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: pink;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall 10s linear infinite;
+    transform-origin: center;
+}
+
+.cherry-blossom::before,
+.cherry-blossom::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: pink;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.cherry-blossom::before {
+    transform: rotate(45deg);
+}
+
+.cherry-blossom::after {
+    transform: rotate(-45deg);
+}
+
+@keyframes fall {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, 80vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.cherry-blossom:nth-child(odd) {
+    animation-duration: 12s;
+}
+
+.cherry-blossom:nth-child(even) {
+    animation-duration: 8s;
+}
+
+.cherry-blossom:nth-child(3n) {
+    animation-duration: 14s;
+}
+
+.cherry-blossom:nth-child(4n) {
+    animation-duration: 16s;
+}
+
+.cherry-blossom:nth-child(5n) {
+    animation-duration: 18s;
+}

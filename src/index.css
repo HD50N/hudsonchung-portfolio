@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Space Grotesk", sans-serif;
+    background: #FFFFFF;
+    color: #0555f6;
+}
+
+@layer utilities {
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .animate-blink {
+        animation: blink 0.8s step-end infinite;
+    }
+
+    @keyframes loading {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(250%);
+        }
+    }
+
+    .animate-loading-bar {
+        animation: loading 0.8s ease infinite;
+    }
+}
+
+/* Styles for the vertical line and indicator */
+.vertical-line {
+    position: fixed;
+    right: 20px;
+    top: 60px; /* Adjust for navbar height */
+    bottom: 20px; /* Adjust for padding */
+    width: 2px;
+    background-color: #0033A0;
+    z-index: 1000;
+}
+
+.indicator {
+    position: absolute;
+    right: -4px;
+    width: 10px;
+    height: 10px;
+    background-color: #0033A0;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* Styles for the section label */
+.section-label {
+    position: absolute;
+    right: 20px;
+    transform: translateX(20px);
+    background-color: #FAF0E6;
+    color: #0033A0;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+}
