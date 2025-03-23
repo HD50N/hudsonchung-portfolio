@@ -1,6 +1,6 @@
 export const Swimming = () => {
     const achievements = [
-        "2x NYS Champion",
+        "2x New York State Champion",
         "All-American Swimmer",
         "HGHS Varsity Swim Team Captain",
         "ConEdison Scholar Athlete Award",
