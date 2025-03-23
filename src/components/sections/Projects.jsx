@@ -16,16 +16,19 @@ export const Projects = () => {
                             title: "Swim Stroke Coach",
                             description: "Developed a swimming stroke detector using Python, OpenCV, and MediaPipe to count strokes and classify styles. Utilized pose estimation to compute joint angles and deliver real-time feedback, boosting training insights.",
                             tech: ["Python", "OpenCV", "MediaPipe"],
+                            link: "https://www.youtube.com/watch?v=fXUMpBmrAWs"
                         },
                         {
                             title: "PeronoAI",
                             description: "Designing and building an AI-powered language learning app that personalizes lessons using OpenAI’s API. Developed a scalable backend architecture with Firebase Firestore, enabling real-time user data storage and lesson tracking.",
                             tech: ["OpenAI API", "Firebase Firestore", "SwiftUI"],
+                            link: "https://github.com/yourusername/peronoai"
                         },
                         {
                             title: "CLI Python Go Implementation",
                             description: "Collaborated in a team of four to create a fully playable game of Go, including game logic and a terminal-based interface. Created a Bot that uses Go-specific board strategies and a simplified Minimax algorithm to achieve an over 85% win rate.",
                             tech: ["Python", "CLI", "Minimax Algorithm"],
+                            link: "https://github.com/yourusername/cli-python-go"
                         },
                     ].map((project, index) => (
                         <div key={index} className="p-6 rounded-xl border-[#0033A0]/50 border hover:-translate-y-1 hover:border-[#0033A0] hover:shadow-[0_2px_8px_rgba(0, 51, 160, 0.2)] transition-all flex flex-col items-center justify-between text-center h-full">
@@ -44,7 +47,7 @@ export const Projects = () => {
                                     ))}
                                 </div>
                             </div>
-                            <a href="#" className="text-[#0033A0] hover:text-[#00BFFF] transition-colors mt-auto">
+                            <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-[#0033A0] hover:text-[#00BFFF] transition-colors mt-auto">
                                 View Project
                             </a>
                         </div>
