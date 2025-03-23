@@ -1,5 +1,7 @@
 import reactImage from '../../assets/hudson.jpeg';
 import './Home.css'; // Import the CSS file for cherry blossom animations
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 const CherryBlossom = () => (
     <div className="cherry-blossom" style={{ top: `${Math.random() * 100}%`, left: `${Math.random() * 100}%` }}></div>
@@ -29,6 +31,17 @@ export const Home = () => {
                     <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#0033A0] to-[#00BFFF] bg-clip-text text-transparent leading-tight">
                         Hi, I'm Hudson Chung
                     </h1>
+                    <div className="flex justify-center space-x-4 mb-6">
+                        <a href="https://github.com/HD50N" target="_blank" rel="noopener noreferrer" className="text-[#9370DB] hover:text-[#800080] transition-colors">
+                            <FontAwesomeIcon icon={faGithub} size="2x" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/hudson-chung" target="_blank" rel="noopener noreferrer" className="text-[#0077B5] hover:text-[#005582] transition-colors">
+                            <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                        </a>
+                        <a href="https://www.youtube.com/@huddychung" target="_blank" rel="noopener noreferrer" className="text-[#FF0000] hover:text-[#CC0000] transition-colors">
+                            <FontAwesomeIcon icon={faYoutube} size="2x" />
+                        </a>
+                    </div>
                     <p className="text-[#4A4A4A] text-lg mb-8 max-w-lg mx-auto">
                         I'm an aspiring software engineer studying computer science and economics at the University of Chicago.
                     </p>
