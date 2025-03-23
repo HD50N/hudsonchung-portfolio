@@ -63,7 +63,7 @@ function App() {
         <>
             {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
             <div className={`min-h-screen transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} bg-[#FAF0E6] text-gray-100 relative`}>
-                <div className="vertical-line">
+                <div className="vertical-line hidden md:block">
                     <div className="indicator" ref={indicatorRef}></div>
                     <div className="section-label" ref={labelRef}></div>
                 </div>

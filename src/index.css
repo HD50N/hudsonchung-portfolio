@@ -40,7 +40,7 @@ html, body {
 .vertical-line {
     position: fixed;
     right: 20px;
-    top: 60px; /* Adjust for navbar height */
+    top: 0; /* Adjust for navbar height */
     bottom: 20px; /* Adjust for padding */
     width: 2px;
     background-color: #0033A0;
