@@ -16,7 +16,7 @@ export const Projects = () => {
                             title: "Swim Stroke Coach",
                             description: "Developed a swimming stroke detector using Python, OpenCV, and MediaPipe to count strokes and classify styles. Utilized pose estimation to compute joint angles and deliver real-time feedback, boosting training insights.",
                             tech: ["Python", "OpenCV", "MediaPipe"],
-                            link: "https://www.youtube.com/watch?v=fXUMpBmrAWs"
+                            link: "https://github.com/HD50N/AISwimCoach"
                         },
                         {
                             title: "PeronoAI",

@@ -1,21 +1,11 @@
 export const Swimming = () => {
-    const topTimes = [
-        { event: "50m Freestyle", time: "23.45s", meet: "Phoenix", year: "2024" },
-        { event: "100m Freestyle", time: "51.23s", meet: "Phoenix", year: "2024" },
-        { event: "200m Freestyle", time: "1:52.34", meet: "Phoenix", year: "2024" },
-        { event: "400m Freestyle", time: "3:58.76", meet: "Phoenix", year: "2024" },
-    ];
-
     const achievements = [
-        "Gold Medalist at State Championships 2024",
-        "Silver Medalist at National Championships 2023",
-        "Bronze Medalist at International Swim Meet 2022",
-    ];
-
-    const accolades = [
-        "Swimmer of the Year 2024",
-        "Most Improved Swimmer 2023",
-        "Best Performance Award 2022",
+        "2x NYS Champion",
+        "All-American Swimmer",
+        "HGHS Varsity Swim Team Captain",
+        "ConEdison Scholar Athlete Award",
+        "Summer Junior Nationals Qualifier",
+        "USA Eastern Zone Select Camp"
     ];
 
     return (
@@ -24,33 +14,36 @@ export const Swimming = () => {
                 <h1 className="text-3xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-[#0033A0] to-[#00BFFF] bg-clip-text text-transparent leading-right text-center">
                     Swimming
                 </h1>
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-8">
                     <div className="p-6 rounded-xl border-[#0033A0]/50 border hover:-translate-y-1 hover:border-[#0033A0] hover:shadow-[0_2px_8px_rgba(0, 51, 160, 0.2)] transition-all">
                         <h2 className="text-xl font-bold mb-4 text-[#0033A0] text-center">
                             Top Times
                         </h2>
-                        <ul className="list-disc list-inside text-[#4A4A4A] space-y-2">
-                            {topTimes.map((time, index) => (
-                                <li key={index}>
-                                    <strong>{time.event}:</strong> {time.time} @ {time.meet} ({time.year})<br />
-                                </li>
-                            ))}
-                        </ul>
+                        <iframe id="preview-frame" src="https://www.swimcloud.com/swimmer/1149977/iframe/?splashes_type=fastest" width="100%" height="500px" frameborder="0"></iframe>
                     </div>
 
-                    <div className="p-6 rounded-xl border-[#0033A0]/50 border hover:-translate-y-1 hover:border-[#0033A0] hover:shadow-[0_2px_8px_rgba(0, 51, 160, 0.2)] transition-all">
-                        <h2 className="text-xl font-bold mb-4 text-[#0033A0] text-center">
-                            Achievements & Accolades
-                        </h2>
-                        <ul className="list-disc list-inside text-[#4A4A4A] space-y-2">
-                            {achievements.map((achievement, index) => (
-                                <li key={index}>{achievement}</li>
-                            ))}
-                            {accolades.map((accolade, index) => (
-                                <li key={index}>{accolade}</li>
-                            ))}
-                        </ul>
+                    <div className="flex flex-col justify-between space-y-6">
+                        <div className="p-6 rounded-xl border-[#0033A0]/50 border hover:-translate-y-1 hover:border-[#0033A0] hover:shadow-[0_2px_8px_rgba(0, 51, 160, 0.2)] transition-all">
+                            <h2 className="text-xl font-bold mb-4 text-[#0033A0] text-center">
+                                Achievements & Accolades
+                            </h2>
+                            <ul className="list-disc list-inside text-[#4A4A4A] space-y-2">
+                                {achievements.map((achievement, index) => (
+                                    <li key={index}>{achievement}</li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="flex-grow p-6 rounded-xl border-[#0033A0]/50 border hover:-translate-y-1 hover:border-[#0033A0] hover:shadow-[0_2px_8px_rgba(0, 51, 160, 0.2)] transition-all flex flex-col justify-center">
+                            <h2 className="text-xl font-bold mb-4 text-[#0033A0] text-center">
+                                Videos
+                            </h2>
+                            <div className="flex justify-center">
+                                <a href="https://photos.app.goo.gl/aBSXKn1rcxX9HQgw5" target="_blank" rel="noopener noreferrer" className="bg-[#0033A0] text-white py-2 px-4 rounded font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(0, 51, 160, 0.4)]">
+                                    Watch Videos
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
