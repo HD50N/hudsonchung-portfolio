@@ -15,16 +15,16 @@ export const Home = () => {
             targetElement.scrollIntoView({ behavior: 'smooth' });
         }
     };
-    
+
     return (
-        <section id="home" className="min-h-screen flex flex-col items-center justify-center relative py-8 bg-[#FFFFFF] pt-20"> {/* Added pt-20 for padding-top */}
+        <section id="home" className="min-h-screen flex flex-col items-center justify-center relative py-8 bg-[#FFFFFF] pt-20">
             <div className="cherry-blossoms">
                 {[...Array(20)].map((_, i) => (
                     <CherryBlossom key={i} />
                 ))}
             </div>
             <div className="flex flex-col items-center justify-center w-full px-4 md:px-8">
-                <div className="p-1 bg-gradient-to-r from-[#0033A0] to-[#00BFFF] rounded-full mb-16"> {/* Increased margin-bottom */}
+                <div className="p-1 bg-gradient-to-r from-[#0033A0] to-[#00BFFF] rounded-full mb-16">
                     <img src={reactImage} alt="Hudson Chung" className="w-80 h-80 rounded-full object-cover object-top shadow-2xl" />
                 </div>
                 <div className="text-center px-4">
@@ -66,5 +66,5 @@ export const Home = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
