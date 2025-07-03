@@ -19,7 +19,7 @@ export const Swimming = () => {
                         <h2 className="text-xl font-bold mb-4 text-[#0033A0] text-center">
                             Top Times
                         </h2>
-                        <iframe id="preview-frame" src="https://www.swimcloud.com/swimmer/1149977/iframe/?splashes_type=fastest" width="100%" height="500px" frameborder="0"></iframe>
+                        <iframe id="preview-frame" src="https://www.swimcloud.com/swimmer/1149977/iframe/?splashes_type=fastest" width="100%" height="500px" frameBorder="0"></iframe>
                     </div>
 
                     <div className="flex flex-col justify-between space-y-6">

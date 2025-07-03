@@ -9,12 +9,25 @@ export const Experience = () => {
                 <div className="space-y-6">
                     <div className="p-6 rounded-xl border-[#0033A0]/50 border hover:-translate-y-1 hover:border-[#0033A0] hover:shadow-[0_2px_8px_rgba(0, 51, 160, 0.2)] transition-all">
                         <h4 className="text-xl font-bold mb-4 text-[#0033A0]">
-                            Full Stack Engineer Intern at FoodFight [June 2024 - September 2024]
+                            Human Behavior (YC X25) - Session Recording Analytics — Founding SWE Intern
                         </h4>
+                        <p className="text-[#4A4A4A] mb-3 font-medium">Remote | May 2025 – Present</p>
                         <ul className="list-disc list-inside text-[#4A4A4A] space-y-2">
-                            <li>Developed frontend services and backend microservices for FoodFight, a social gaming platform using menu items as currency for live sports bets, with ReactJS and Python, collaborating with 6 interns and 3 senior engineers.</li>
-                            <li>Implemented 3 Slack bots using Python, REST API and Webhooks that notified development team of 100+ new sign ups, reported individual real time game statistics, and gathered user information to generate user insights.</li>
-                            <li>Updated AWS EC2 database tables and backend services, ensuring game status updates were reflected in real-time.</li>
+                            <li>Developed TypeScript SDK for session recording, enabling real-time event streaming and data redaction for all users.</li>
+                            <li>Built an ingestion server with Redis/PostgreSQL, 5+ endpoints and Vercel functions, enabling both server/serverless.</li>
+                            <li>Automated session archiving with AWS S3 and GZIP, reducing inactive session data by 60–80% via cron scheduling.</li>
+                        </ul>
+                    </div>
+
+                    <div className="p-6 rounded-xl border-[#0033A0]/50 border hover:-translate-y-1 hover:border-[#0033A0] hover:shadow-[0_2px_8px_rgba(0, 51, 160, 0.2)] transition-all">
+                        <h4 className="text-xl font-bold mb-4 text-[#0033A0]">
+                            FoodFight - Social Sports Betting — Full Stack SWE Intern
+                        </h4>
+                        <p className="text-[#4A4A4A] mb-3 font-medium">Remote | Jun 2024 – Sep 2024</p>
+                        <ul className="list-disc list-inside text-[#4A4A4A] space-y-2">
+                            <li>Created frontend and backend microservices for a social gaming platform, collaborating with 9 engineers to launch.</li>
+                            <li>Implemented 3 Slack bots, automating notifications for 100+ signups and real-time game statistics for the team.</li>
+                            <li>Updated AWS EC2 database tables and backend, ensuring real-time game status updates for all users.</li>
                         </ul>
                     </div>
 

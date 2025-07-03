@@ -43,7 +43,7 @@ export const Home = () => {
                         </a>
                     </div>
                     <p className="text-[#4A4A4A] text-lg mb-8 max-w-lg mx-auto">
-                        I'm an aspiring software engineer studying computer science and economics at the University of Chicago.
+                        Full Stack Software Engineer and Junior at University of Chicago with a focus on Computer Science and Economics. Interned at a YC-backed startup building session recording SDK and high-performance ingestion server.
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-4 mb-8">
