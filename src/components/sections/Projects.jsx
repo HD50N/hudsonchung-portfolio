@@ -16,7 +16,7 @@ export const Projects = () => {
                             title: "Off The Dome - AI Video Feedback",
                             description: "Architected a full-stack social platform with React/TypeScript, enabling real-time video sharing and AI feedback. Designed content moderation with Edge Functions, ensuring 24-hour response to flagged content and user reports. Utilized Supabase for user authentication, database management, and video blob storage.",
                             tech: ["React", "TypeScript", "Supabase", "Edge Functions"],
-                            link: "https://github.com/HD50N/off-the-dome"
+                            link: "https://apps.apple.com/us/app/off-the-dome/id6747694779"
                         },
                         {
                             title: "PeronoAI - Korean Language Learning",
