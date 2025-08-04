@@ -1,4 +1,4 @@
-import reactImage from '../../assets/hudson.jpeg';
+import reactImage from '../../assets/Hudson.jpeg';
 import './Home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
