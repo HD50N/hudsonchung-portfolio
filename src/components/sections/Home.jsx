@@ -1,5 +1,5 @@
 import reactImage from '../../assets/Hudson.jpeg';
-import './Home.css';
+import './home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
