@@ -48,64 +48,94 @@ export const Swimming = () => {
     ];
 
     return (
-        <section id="swimming" className="min-h-screen flex items-center justify-center py-20 bg-[#FFFFFF]">
-            <div className="max-w-4xl mx-auto px-4 flex flex-col items-center">
-                <h1 className="text-3xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-[#0033A0] to-[#00BFFF] bg-clip-text text-transparent leading-right text-center">
-                    Swimming
-                </h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-8">
-                    <div className="p-6 rounded-xl border-[#0033A0]/50 border hover:-translate-y-1 hover:border-[#0033A0] hover:shadow-[0_2px_8px_rgba(0, 51, 160, 0.2)] transition-all">
-                        <h2 className="text-xl font-bold mb-4 text-[#0033A0] text-center">
+        <section id="swimming" className="min-h-screen py-20 bg-gradient-to-br from-[#F0F9FF] to-[#E0F2FE]">
+            <div className="max-w-7xl mx-auto px-4">
+                {/* Header */}
+                <div className="text-center mb-16 animate-fade-in-up">
+                    <h1 className="text-heading font-bold mb-4 gradient-text">
+                        Swimming
+                    </h1>
+                    <p className="text-body max-w-2xl mx-auto">
+                        Competitive swimming achievements and media coverage from my high school career
+                    </p>
+                </div>
+
+                {/* Main Content Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                    {/* Top Times Card */}
+                    <div className="card p-8 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+                        <h2 className="text-subheading font-semibold mb-6 text-[#1A1A1A] text-center">
                             Top Times
                         </h2>
-                        <iframe id="preview-frame" src="https://www.swimcloud.com/swimmer/1149977/iframe/?splashes_type=fastest" width="100%" height="500px" frameBorder="0"></iframe>
+                        <div className="bg-white rounded-lg overflow-hidden shadow-sm">
+                            <iframe 
+                                id="preview-frame" 
+                                src="https://www.swimcloud.com/swimmer/1149977/iframe/?splashes_type=fastest" 
+                                width="100%" 
+                                height="500px" 
+                                frameBorder="0"
+                                className="rounded-lg"
+                            />
+                        </div>
                     </div>
 
-                    <div className="flex flex-col justify-between space-y-6">
-                        <div className="p-6 rounded-xl border-[#0033A0]/50 border hover:-translate-y-1 hover:border-[#0033A0] hover:shadow-[0_2px_8px_rgba(0, 51, 160, 0.2)] transition-all">
-                            <h2 className="text-xl font-bold mb-4 text-[#0033A0] text-center">
-                                Achievements & Accolades
-                            </h2>
-                            <ul className="list-disc list-inside text-[#4A4A4A] space-y-2">
-                                {achievements.map((achievement, index) => (
-                                    <li key={index}>{achievement}</li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        <div className="flex-grow p-6 rounded-xl border-[#0033A0]/50 border hover:-translate-y-1 hover:border-[#0033A0] hover:shadow-[0_2px_8px_rgba(0, 51, 160, 0.2)] transition-all flex flex-col justify-center">
-                            <h2 className="text-xl font-bold mb-4 text-[#0033A0] text-center">
-                                Videos
-                            </h2>
-                            <div className="flex justify-center">
-                                <a href="https://photos.app.goo.gl/aBSXKn1rcxX9HQgw5" target="_blank" rel="noopener noreferrer" className="bg-[#0033A0] text-white py-2 px-4 rounded font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(0, 51, 160, 0.4)]">
-                                    Watch Videos
-                                </a>
-                            </div>
+                    {/* Achievements Card */}
+                    <div className="card p-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+                        <h2 className="text-subheading font-semibold mb-6 text-[#1A1A1A] text-center">
+                            Achievements & Accolades
+                        </h2>
+                        <div className="space-y-4">
+                            {achievements.map((achievement, index) => (
+                                <div 
+                                    key={index} 
+                                    className="flex items-center space-x-3 p-4 bg-gradient-to-r from-[#EFF6FF] to-[#DBEAFE] rounded-lg border border-[#BFDBFE]"
+                                >
+                                    <div className="w-2 h-2 bg-[#3B82F6] rounded-full"></div>
+                                    <span className="text-[#1A1A1A] font-medium">{achievement}</span>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
 
+                {/* Videos Section */}
+                <div className="card p-8 mb-16 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+                    <h2 className="text-subheading font-semibold mb-6 text-[#1A1A1A] text-center">
+                        Videos
+                    </h2>
+                    <div className="flex justify-center">
+                        <a 
+                            href="https://photos.app.goo.gl/aBSXKn1rcxX9HQgw5" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="btn-primary"
+                        >
+                            Watch Videos
+                        </a>
+                    </div>
+                </div>
+
                 {/* Articles Section */}
-                <div className="w-full">
-                    <div className="p-6 rounded-xl border-[#0033A0]/50 border hover:-translate-y-1 hover:border-[#0033A0] hover:shadow-[0_2px_8px_rgba(0, 51, 160, 0.2)] transition-all">
-                        <h2 className="text-xl font-bold mb-6 text-[#0033A0] text-center">
+                <div className="animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+                    <div className="card p-8">
+                        <h2 className="text-subheading font-semibold mb-8 text-[#1A1A1A] text-center">
                             Articles
                         </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {articles.map((article, index) => (
-                                <div key={index} className="p-4 rounded-lg border border-[#0033A0]/20 hover:border-[#0033A0] hover:shadow-[0_2px_8px_rgba(0, 51, 160, 0.1)] transition-all flex flex-col">
-                                    <h3 className="font-semibold text-[#0033A0] mb-2">{article.title}</h3>
-                                    <p className="text-sm text-[#4A4A4A] mb-3 flex-grow">{article.description}</p>
+                                <div key={index} className="card p-6 hover:shadow-lg transition-all duration-300">
+                                    <h3 className="font-semibold text-[#1A1A1A] mb-3 text-lg">{article.title}</h3>
+                                    <p className="text-sm text-[#525252] mb-4 flex-grow">{article.description}</p>
                                     <div className="flex justify-between items-center mt-auto">
-                                        <span className="text-xs text-[#666]">{article.date}</span>
+                                        <span className="text-xs text-[#737373] bg-[#F5F5F5] px-2 py-1 rounded-full">{article.date}</span>
                                         <a 
                                             href={article.link} 
                                             target="_blank" 
                                             rel="noopener noreferrer"
-                                            className="text-[#0033A0] text-sm font-medium hover:text-[#00BFFF] transition-colors"
+                                            className="text-[#3B82F6] text-sm font-medium hover:text-[#1D4ED8] transition-colors flex items-center space-x-1"
                                         >
-                                            {article.link.includes('facebook.com/watch') ? 'Watch Video →' : 'Read Article →'}
+                                            <span>{article.link.includes('facebook.com/watch') ? 'Watch Video' : 'Read Article'}</span>
+                                            <span>→</span>
                                         </a>
                                     </div>
                                 </div>

@@ -2,10 +2,20 @@ import { useEffect, useState } from "react";
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
     const [activeSection, setActiveSection] = useState('home');
+    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
         document.body.style.overflow = menuOpen ? "hidden" : "";
     }, [menuOpen]);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const handleScroll = (e, targetId) => {
         e.preventDefault();
@@ -39,30 +49,71 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
         return () => window.removeEventListener('scroll', handleScrollSpy);
     }, []);
 
+    const navItems = [
+        { id: 'home', label: 'Home' },
+        { id: 'about', label: 'About' },
+        { id: 'experience', label: 'Experience' },
+        { id: 'projects', label: 'Projects' },
+        { id: 'swimming', label: 'Swimming' }
+    ];
+
     return (
-        <nav className="fixed top-0 w-full z-40">
-            {/* Left bubble for name */}
-            <div className="absolute top-4 left-4 bg-[#0033A0]/90 text-white rounded-full p-4 shadow-lg">
-                <a href="#home" className="text-xl font-bold" onClick={(e) => handleScroll(e, 'home')}>
-                    Hudson Chung
-                </a>
-            </div>
+        <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${
+            scrolled ? 'bg-white/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        }`}>
+            <div className="max-w-7xl mx-auto px-4">
+                <div className="flex items-center justify-between h-16">
+                    {/* Logo/Name */}
+                    <div className="flex items-center">
+                        <a 
+                            href="#home" 
+                            className="text-xl font-bold gradient-text hover:opacity-80 transition-opacity"
+                            onClick={(e) => handleScroll(e, 'home')}
+                        >
+                            Hudson Chung
+                        </a>
+                    </div>
 
-            {/* Center bubble for sections */}
-            <div className="absolute top-4 left-1/2 transform hidden md:block -translate-x-1/2 bg-[#0033A0]/90 text-white rounded-full p-4 shadow-lg">
-                <div className="flex space-x-4">
-                    <a href="#home" className={`hover:text-[#FEDD00] transition-colors ${activeSection === 'home' ? '[text-shadow:_0_0_10px_rgba(255,255,255,1)]' : ''}`} onClick={(e) => handleScroll(e, 'home')}> Home </a>
-                    <a href="#about" className={`hover:text-[#FEDD00] transition-colors ${activeSection === 'about' ? '[text-shadow:_0_0_10px_rgba(255,255,255,1)]' : ''}`} onClick={(e) => handleScroll(e, 'about')}> About </a>
-                    <a href="#experience" className={`hover:text-[#FEDD00] transition-colors ${activeSection === 'experience' ? '[text-shadow:_0_0_10px_rgba(255,255,255,1)]' : ''}`} onClick={(e) => handleScroll(e, 'experience')}> Experience </a>
-                    <a href="#projects" className={`hover:text-[#FEDD00] transition-colors ${activeSection === 'projects' ? '[text-shadow:_0_0_10px_rgba(255,255,255,1)]' : ''}`} onClick={(e) => handleScroll(e, 'projects')}> Projects </a>
-                    <a href="#swimming" className={`hover:text-[#FEDD00] transition-colors ${activeSection === 'swimming' ? '[text-shadow:_0_0_10px_rgba(255,255,255,1)]' : ''}`} onClick={(e) => handleScroll(e, 'swimming')}> Swimming </a>
-                </div>
-            </div>
+                    {/* Desktop Navigation */}
+                    <div className="hidden md:flex items-center space-x-8">
+                        {navItems.map((item) => (
+                            <a
+                                key={item.id}
+                                href={`#${item.id}`}
+                                className={`text-sm font-medium transition-all duration-200 hover:text-[#3B82F6] ${
+                                    activeSection === item.id 
+                                        ? 'text-[#3B82F6] relative' 
+                                        : 'text-[#525252]'
+                                }`}
+                                onClick={(e) => handleScroll(e, item.id)}
+                            >
+                                {item.label}
+                                {activeSection === item.id && (
+                                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-[#3B82F6] to-[#0EA5E9] rounded-full"></div>
+                                )}
+                            </a>
+                        ))}
+                    </div>
 
-            {/* Right bubble for hamburger menu */}
-            <div className={`absolute md:hidden top-4 right-4 bg-[#0033A0]/90 text-white rounded-full p-4 shadow-lg cursor-pointer flex items-center justify-center ${menuOpen ? 'hidden' : ''}`} onClick={() => setMenuOpen((prev) => !prev)}>
-                <div className={`w-7 h-5 relative z-40 flex items-center justify-center ${menuOpen ? 'hidden' : ''}`}>
-                    &#9776;
+                    {/* Mobile Menu Button */}
+                    <div className="md:hidden">
+                        <button
+                            onClick={() => setMenuOpen(!menuOpen)}
+                            className="p-2 rounded-lg bg-white/80 backdrop-blur-sm border border-[#E5E5E5] hover:bg-white transition-all duration-200"
+                        >
+                            <div className="w-6 h-6 flex flex-col justify-center items-center">
+                                <span className={`block w-5 h-0.5 bg-[#1A1A1A] transition-all duration-300 ${
+                                    menuOpen ? 'rotate-45 translate-y-1' : ''
+                                }`}></span>
+                                <span className={`block w-5 h-0.5 bg-[#1A1A1A] transition-all duration-300 mt-1 ${
+                                    menuOpen ? 'opacity-0' : ''
+                                }`}></span>
+                                <span className={`block w-5 h-0.5 bg-[#1A1A1A] transition-all duration-300 mt-1 ${
+                                    menuOpen ? '-rotate-45 -translate-y-1' : ''
+                                }`}></span>
+                            </div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
