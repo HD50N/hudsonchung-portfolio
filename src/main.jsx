@@ -5,7 +5,7 @@ import './index.css'
 import App from './App.jsx'
 
 
-//USE PHC NOT PHX
+//USE PHC NOT PHX :)
 const options = {
   api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
   defaults: '2025-05-24',
