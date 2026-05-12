@@ -22,6 +22,7 @@ const SKILLS = [
 const LEADERSHIP = [
   {
     org: 'Korean Students Organization',
+    link: 'https://ksouchicago.com',
     role: 'President + Webmaster',
     period: 'Sep 2023 — Present',
     bullets: [
@@ -32,6 +33,7 @@ const LEADERSHIP = [
   },
   {
     org: "UChicago Men's Swim Team",
+    link: 'https://athletics.uchicago.edu/sports/mens-swimming-and-diving/roster/hudson-chung/7354',
     role: 'NCAA DIII Athlete',
     period: 'Sep 2023 — Feb 2026',
     bullets: [
@@ -41,6 +43,7 @@ const LEADERSHIP = [
   },
   {
     org: 'Kappa Theta Pi (KTP)',
+    link: 'https://uchicagoktp.com',
     role: 'Professional Tech Fraternity · Eta Class · Project Committee',
     period: 'Apr 2024 — Present',
     bullets: [
@@ -50,6 +53,7 @@ const LEADERSHIP = [
   },
   {
     org: 'UChicago Mycelium',
+    link: 'https://mycelium.build',
     role: 'Builder Group · Member',
     period: 'Jun 2025 — Present',
     bullets: [
@@ -107,10 +111,10 @@ export default function About() {
         </div>
 
         <div className="leadership-cards reveal">
-          {LEADERSHIP.map(({ org, role, period, bullets }) => (
+          {LEADERSHIP.map(({ org, link, role, period, bullets }) => (
             <div key={org} className="leadership-card">
-              {org === 'Korean Students Organization'
-                ? <a href="https://ksouchicago.com" target="_blank" rel="noopener noreferrer" className="leadership-org" style={{ textDecoration: 'none' }}>{org}</a>
+              {link
+                ? <a href={link} target="_blank" rel="noopener noreferrer" className="leadership-org" style={{ textDecoration: 'none' }}>{org}</a>
                 : <div className="leadership-org">{org}</div>
               }
               <div className="leadership-role-label">{role}</div>

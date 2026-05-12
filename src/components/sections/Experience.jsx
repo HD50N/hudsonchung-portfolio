@@ -2,6 +2,7 @@ const EXPERIENCES = [
   {
     company: 'Reconcile',
     suffix: null,
+    companyLink: 'https://parity-ashy.vercel.app',
     role: 'Co-Founder',
     period: 'May 2026 — Present',
     desc: 'AI-assisted modernization platform for regional-bank Java/.NET integration estates',
@@ -50,7 +51,7 @@ export default function Experience() {
       <div className="container">
         <div className="section-eyebrow reveal">02 — Experience</div>
         <h2 className="section-title reveal reveal-d1">
-          What I've<br />Built
+          Where I've<br />Been
         </h2>
 
         <div className="exp-list">
