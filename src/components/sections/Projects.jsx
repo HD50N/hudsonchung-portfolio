@@ -1,65 +1,97 @@
-export const Projects = () => {
-    return (
-        <section id="projects" className="min-h-screen flex items-center justify-center py-20 bg-[#FFFFFF]">
-            <div className="max-w-4xl mx-auto px-4 flex flex-col items-center">
-                <h1 className="text-3xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-[#0033A0] to-[#00BFFF] bg-clip-text text-transparent leading-right text-center">
-                    Projects
-                </h1>
+const PROJECTS = [
+  {
+    name: 'Shu Xiang',
+    sub: 'Bilingual Filing Agent',
+    desc: 'Voice agent that helps non-English-speaking immigrants file US government forms in their native language. Python asyncio orchestrator with Playwright, a bilingual overlay injected onto live government pages, ElevenLabs TTS/STT with Claude Haiku intent extraction, and a bilingual PDF generator — end-to-end in under 7 seconds.',
+    tech: ['Python', 'Playwright', 'Claude API', 'ElevenLabs', 'Next.js'],
+    link: 'https://github.com/HD50N/shu-xiang',
+    linkLabel: 'GitHub',
+    secondLink: 'https://youtu.be/sKUo6bGkAw0',
+    secondLinkLabel: 'Watch Demo',
+  },
+  {
+    name: 'Leash',
+    sub: 'AI Agent Guardrails',
+    desc: 'TypeScript SDK that wraps OpenAI and Anthropic clients with a maxCostUsd ceiling, hard-stopping runaway agent loops before the bill hits. Built a real-time event ingestion API with concurrent-safe upsert logic tracking cost, tokens, and call counts per run. Shipped a dashboard for monitoring agent run statuses (active, limited, loop, interrupted) with API key management and team support.',
+    tech: ['Next.js', 'TypeScript', 'Supabase', 'Vercel'],
+    link: 'https://useleash.vercel.app',
+    linkLabel: 'useleash.vercel.app',
+  },
+  {
+    name: 'Verd',
+    sub: 'Startup Idea Validator',
+    desc: 'Scores startup ideas using a multi-agent OpenAI pipeline with Zod-validated structured outputs — criterion-by-criterion breakdown, evidence notes, competitor sketches, and community/trend signals. Includes Supabase auth, Stripe Pro subscriptions, HMAC-signed guest limits, and a validation module with Reddit enrichment and LLM-synthesized reports.',
+    tech: ['Next.js', 'TypeScript', 'OpenAI API', 'Supabase', 'Stripe'],
+    link: 'https://github.com/HD50N/shouldibuildthis',
+    linkLabel: 'GitHub',
+  },
+  {
+    name: 'Off The Dome',
+    sub: 'AI Video Feedback',
+    desc: 'Full-stack social platform with React/TypeScript enabling real-time video sharing, AI speech feedback via OpenAI Whisper, content moderation with Edge Functions, and Supabase auth and storage.',
+    tech: ['React', 'TypeScript', 'Supabase', 'Edge Functions'],
+    link: 'https://apps.apple.com/us/app/off-the-dome/id6747694779',
+    linkLabel: 'App Store',
+  },
+  {
+    name: 'KSO',
+    sub: 'Korean Students Organization',
+    desc: 'Full-stack e-commerce site built with Next.js, TypeScript, Supabase, and Stripe + Printful integration for automated inventory management. Includes an admin dashboard enabling non-technical members to manage the website and product orders.',
+    tech: ['Next.js', 'TypeScript', 'Supabase', 'Stripe', 'Printful'],
+    link: 'https://ksouchicago.com',
+    linkLabel: 'ksouchicago.com',
+  },
+  {
+    name: 'PeronoAI',
+    sub: 'Korean Language Learning',
+    desc: 'AI-powered language learning app with React/TypeScript, OpenAI APIs for adaptive content generation, real-time chat feedback, and scalable Supabase backend with auth and database relationships.',
+    tech: ['React', 'TypeScript', 'OpenAI API', 'Supabase'],
+    link: 'https://github.com/HD50N/peronoai',
+    linkLabel: 'GitHub',
+  },
+  {
+    name: 'Swim Stroke Coach',
+    sub: 'Computer Vision',
+    desc: 'Python-based swimming stroke detector using OpenCV and MediaPipe for real-time pose estimation, stroke counting and classification with joint angle analysis and training feedback.',
+    tech: ['Python', 'OpenCV', 'MediaPipe'],
+    link: 'https://github.com/HD50N/AISwimCoach',
+    linkLabel: 'GitHub',
+  },
+]
 
-                <p className="text-lg mb-8 max-w-lg mx-auto text-center text-[#4A4A4A]">
-                    Here are some of the projects I've worked on.
-                </p>
+export default function Projects() {
+  return (
+    <section id="projects">
+      <div className="container">
+        <div className="section-eyebrow reveal">03 — Projects</div>
+        <h2 className="section-title reveal reveal-d1">
+          Selected<br />Work
+        </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {[
-                        {
-                            title: "Off The Dome - AI Video Feedback",
-                            description: "Architected a full-stack social platform with React/TypeScript, enabling real-time video sharing and AI feedback. Designed content moderation with Edge Functions, ensuring 24-hour response to flagged content and user reports. Utilized Supabase for user authentication, database management, and video blob storage.",
-                            tech: ["React", "TypeScript", "Supabase", "Edge Functions"],
-                            link: "https://apps.apple.com/us/app/off-the-dome/id6747694779"
-                        },
-                        {
-                            title: "PeronoAI - Korean Language Learning",
-                            description: "Engineered using React/TypeScript, integrating OpenAI APIs for AI content generation and real-time chat feedback. Established scalable authentication and database relationships, demonstrating strong system design skills. Developed AI-powered features for conversation practice and adaptive learning, tailoring content to user profiles.",
-                            tech: ["React", "TypeScript", "OpenAI API", "Supabase"],
-                            link: "https://github.com/HD50N/peronoai"
-                        },
-                        {
-                            title: "Swim Stroke Coach",
-                            description: "Developed a swimming stroke detector using Python, OpenCV, and MediaPipe to count strokes and classify styles. Utilized pose estimation to compute joint angles and deliver real-time feedback, boosting training insights.",
-                            tech: ["Python", "OpenCV", "MediaPipe"],
-                            link: "https://github.com/HD50N/AISwimCoach"
-                        },
-                        {
-                            title: "CLI Python Go Implementation",
-                            description: "Collaborated in a team of four to create a fully playable game of Go, including game logic and a terminal-based interface. Created a Bot that uses Go-specific board strategies and a simplified Minimax algorithm to achieve an over 85% win rate.",
-                            tech: ["Python", "CLI", "Minimax Algorithm"],
-                            link: "https://github.com/HD50N/cli-python-go"
-                        },
-                    ].map((project, index) => (
-                        <div key={index} className="p-6 rounded-xl border-[#0033A0]/50 border hover:-translate-y-1 hover:border-[#0033A0] hover:shadow-[0_2px_8px_rgba(0, 51, 160, 0.2)] transition-all flex flex-col items-center justify-between text-center h-full">
-                            <div>
-                                <h2 className="text-xl font-bold mb-2 text-[#0033A0]">
-                                    {project.title}
-                                </h2>
-                                <p className="text-[#4A4A4A] mb-4">
-                                    {project.description}
-                                </p>
-                                <div className="flex justify-center space-x-2 mb-4">
-                                    {project.tech.map((tech, key) => (
-                                        <span key={key} className="flex items-center justify-center h-8 bg-[#0033A0]/10 text-[#0033A0] py-1 px-3 rounded-full text-sm hover:bg-[#0033A0]/20 hover:shadow-[0_2px_8px_rgba(0, 51, 160, 0.2)]">
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                            <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-[#0033A0] hover:text-[#00BFFF] transition-colors mt-auto">
-                                View Project
-                            </a>
-                        </div>
-                    ))}
-                </div>
+        <div className="projects-grid">
+          {PROJECTS.map(({ name, sub, desc, tech, link, linkLabel, secondLink, secondLinkLabel }, i) => (
+            <div key={name} className={`project-card reveal reveal-d${Math.min(i + 1, 4)}`}>
+              <div className="project-num">0{i + 1}</div>
+              <div className="project-name">{name}</div>
+              <div className="project-sub">{sub}</div>
+              <p className="project-desc">{desc}</p>
+              <div className="project-tags">
+                {tech.map(t => <span key={t} className="project-tag">{t}</span>)}
+              </div>
+              <div style={{ display: 'flex', gap: '20px', marginTop: 'auto' }}>
+                <a href={link} target="_blank" rel="noopener noreferrer" className="project-link">
+                  {linkLabel} <span className="project-arrow">↗</span>
+                </a>
+                {secondLink && (
+                  <a href={secondLink} target="_blank" rel="noopener noreferrer" className="project-link">
+                    {secondLinkLabel} <span className="project-arrow">↗</span>
+                  </a>
+                )}
+              </div>
             </div>
-        </section>
-    )
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }

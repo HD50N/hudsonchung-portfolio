@@ -1,101 +1,111 @@
 import { useState, useEffect, useRef } from 'react'
-import { LoadingScreen } from './components/LoadingScreen'
-import "./index.css"
-import { Navbar } from './components/Navbar'
-import { MobileMenu } from './components/MobileMenu'
-import { Home } from './components/sections/Home'
-import { About } from './components/sections/About'
-import { Projects } from './components/sections/Projects'
-import { Swimming } from './components/sections/Swimming'
-import { Experience } from './components/sections/Experience'
+import LoadingScreen from './components/LoadingScreen'
+import Navbar from './components/Navbar'
+import MobileMenu from './components/MobileMenu'
+import BackgroundAnimation from './components/BackgroundAnimation'
+import Home from './components/sections/Home'
+import About from './components/sections/About'
+import Experience from './components/sections/Experience'
+import Projects from './components/sections/Projects'
+import Swimming from './components/sections/Swimming'
 
 function App() {
-    const [isLoaded, setIsLoaded] = useState(false)
-    const [menuOpen, setMenuOpen] = useState(false)
-    const [currentSection, setCurrentSection] = useState('home')
-    const [isScrolling, setIsScrolling] = useState(false)
-    const indicatorRef = useRef(null)
-    const labelRef = useRef(null)
+  const [loading, setLoading] = useState(true)
+  const [activeSection, setActiveSection] = useState('home')
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light')
+  const cursorRef = useRef(null)
 
-    useEffect(() => {
-        const sections = document.querySelectorAll('section')
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setCurrentSection(entry.target.id)
-                    }
-                })
-            },
-            { threshold: 0.5 }
-        )
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
+  }, [theme])
 
-        sections.forEach((section) => {
-            observer.observe(section)
-        })
+  useEffect(() => {
+    const t = setTimeout(() => setLoading(false), 2000)
+    return () => clearTimeout(t)
+  }, [])
 
-        return () => {
-            sections.forEach((section) => {
-                observer.unobserve(section)
-            })
-        }
-    }, [])
+  useEffect(() => {
+    if (loading) return
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolling(true)
-            const timeout = setTimeout(() => setIsScrolling(false), 150)
-            return () => clearTimeout(timeout)
-        }
+    const onMove = (e) => {
+      if (cursorRef.current) {
+        cursorRef.current.style.left = `${e.clientX}px`
+        cursorRef.current.style.top = `${e.clientY}px`
+      }
+    }
+    const onScroll = () => setScrolled(window.scrollY > 60)
 
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
+    document.addEventListener('mousemove', onMove)
+    window.addEventListener('scroll', onScroll)
 
-    useEffect(() => {
-        const sectionPositions = {
-            home: document.getElementById('home')?.offsetTop || 0,
-            about: document.getElementById('about')?.offsetTop || 0,
-            'experience': document.getElementById('experience')?.offsetTop || 0,
-            projects: document.getElementById('projects')?.offsetTop || 0,
-            swimming: document.getElementById('swimming')?.offsetTop || 0
-        }
-        const totalHeight = document.body.scrollHeight - window.innerHeight
-        const indicatorHeight = window.innerHeight - 80
-
-        if (indicatorRef.current && labelRef.current && totalHeight > 0) {
-            const position = (sectionPositions[currentSection] / totalHeight) * indicatorHeight
-            indicatorRef.current.style.transform = `translateY(${position}px)`
-            labelRef.current.style.transform = `translateY(${position}px)`
-            labelRef.current.textContent = currentSection.charAt(0).toUpperCase() + currentSection.slice(1)
-        }
-    }, [currentSection])
-
-    return (
-        <>
-            {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
-            <div className={`min-h-screen transition-all duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} bg-[#FAFAFA] text-[#1A1A1A] relative`}>
-                {/* Modern Scroll Indicator */}
-                <div className={`vertical-line hidden lg:block transition-opacity duration-300 ${isScrolling ? 'opacity-50' : 'opacity-100'}`}>
-                    <div className="indicator" ref={indicatorRef}></div>
-                    <div className="section-label" ref={labelRef}></div>
-                </div>
-                
-                {/* Navigation */}
-                <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-                <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-                
-                {/* Main Content */}
-                <main className="relative">
-                    <Home />
-                    <About />
-                    <Experience />
-                    <Projects />
-                    <Swimming />
-                </main>
-            </div>
-        </>
+    const reveals = document.querySelectorAll('.reveal')
+    const revealObs = new IntersectionObserver(
+      (entries) => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.08, rootMargin: '0px 0px -24px 0px' }
     )
+    reveals.forEach(el => revealObs.observe(el))
+
+    const sections = document.querySelectorAll('section[id]')
+    const sectionObs = new IntersectionObserver(
+      (entries) => entries.forEach(e => e.isIntersecting && setActiveSection(e.target.id)),
+      { threshold: 0.35 }
+    )
+    sections.forEach(s => sectionObs.observe(s))
+
+    return () => {
+      document.removeEventListener('mousemove', onMove)
+      window.removeEventListener('scroll', onScroll)
+      revealObs.disconnect()
+      sectionObs.disconnect()
+    }
+  }, [loading])
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+  }, [menuOpen])
+
+  if (loading) return <LoadingScreen />
+
+  return (
+    <>
+    <BackgroundAnimation theme={theme} />
+    <div className="site-wrapper">
+      <div ref={cursorRef} className="cursor-spotlight" />
+      <div className="grain-overlay" />
+      <Navbar
+        activeSection={activeSection}
+        scrolled={scrolled}
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        theme={theme}
+        setTheme={setTheme}
+      />
+      <MobileMenu open={menuOpen} setOpen={setMenuOpen} />
+      <main>
+        <Home />
+        <About />
+        <Experience />
+        <Projects />
+        <Swimming />
+      </main>
+      <footer className="site-footer">
+        <div className="site-footer-inner">
+          <span className="font-mono text-muted">© 2025 Hudson Chung</span>
+          <a
+            href="mailto:hudsonch@uchicago.edu"
+            className="font-mono text-muted hover-accent"
+            style={{ textDecoration: 'none' }}
+          >
+            hudsonch@uchicago.edu
+          </a>
+        </div>
+      </footer>
+    </div>
+    </>
+  )
 }
 
 export default App

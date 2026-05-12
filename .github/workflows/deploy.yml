@@ -24,9 +24,6 @@ jobs:
       run: npm ci
       
     - name: Build
-      env:
-        VITE_PUBLIC_POSTHOG_KEY: ${{ secrets.VITE_PUBLIC_POSTHOG_KEY }}
-        VITE_PUBLIC_POSTHOG_HOST: ${{ secrets.VITE_PUBLIC_POSTHOG_HOST }}
       run: npm run build
       
     - name: Deploy to GitHub Pages
