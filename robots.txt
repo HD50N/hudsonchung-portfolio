@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hd50n.github.io/hudsonchung-portfolio/sitemap.xml

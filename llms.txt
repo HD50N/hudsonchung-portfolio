@@ -1,0 +1,33 @@
+# Hudson Chung
+
+> Software engineer and founder building AI-powered products. Co-founder of Marrow (May 2026–present). Previously co-founder of Reconcile (Jan–May 2026) and founding engineer at Human Behavior, YC X25 (May 2025–May 2026). B.S. Computer Science (Machine Learning), University of Chicago, expected Dec 2026. Based in Chicago, IL.
+
+- Site: https://hd50n.github.io/hudsonchung-portfolio/
+- GitHub: https://github.com/HD50N
+- LinkedIn: https://www.linkedin.com/in/hudson-chung
+- Email: hudsonch@uchicago.edu
+
+## Experience
+
+- **Marrow** (Co-Founder, May 2026–present, https://usemarrow.co): expert-judgment platform. Mastra agent runtime, Composio MCP tool execution with a draft-only safety policy, multi-source RAG pipeline with reranking, eval harness with locked holdouts, durable DAG workflow engine, Expo mobile app. Next.js, Supabase, Stripe.
+- **Reconcile** (Co-Founder, Jan–May 2026): AI-assisted modernization of regional-bank Java/.NET middleware. Outbound-only on-prem Docker agent, LLM spec extraction and REST/OpenAPI codegen, Claude-classified equivalence diffing, GitHub App integration.
+- **Human Behavior, YC X25** (Founding Engineer, May 2025–May 2026, https://humanbehavior.co): AI session-replay analytics. Owned the public TypeScript SDK (~140 npm releases, 500K+ sessions across 30+ apps), Node.js ingestion on AWS ECS Fargate/ALB, Kafka streaming, Kafka-to-S3 archiver on EC2, ClickHouse, Datadog, Stripe usage-based billing, AI install wizard, and the docs site.
+- **Food Fight** (Full Stack Engineer Intern, Jun–Sep 2024): Slack bots in Python, PostgreSQL schema redesign, React/Capacitor frontend.
+
+## Projects
+
+- Swarm Wallet, SwarmSell, Prefetch (Uncommon Hacks 2026): parallel browser-agent swarms with Browserbase/Stagehand, Snowflake Cortex semantic memory, speculative inference runtime.
+- Shu Xiang: bilingual voice agent (Python asyncio, Playwright, Claude, ElevenLabs) that files government forms for Mandarin speakers.
+- Leash (https://useleash.vercel.app): zero-dependency npm SDK enforcing dollar caps and loop detection on OpenAI/Anthropic agents.
+- Verd (https://getverd.vercel.app): startup-idea validator with a multi-stage OpenAI structured-output pipeline, Supabase auth, Stripe.
+- Off The Dome (App Store): AI speech-coaching app, React/Capacitor, Supabase, OpenAI Whisper.
+- KSO Website (https://ksouchicago.com): Next.js e-commerce with Stripe and Printful fulfillment.
+- Swim Stroke Coach: OpenCV + MediaPipe + YOLOv7 stroke detection.
+
+## Skills
+
+TypeScript, Python, JavaScript, SQL, Java, C. React, Next.js, React Native/Expo, Node.js, PostgreSQL, Supabase, Redis, Kafka, ClickHouse, Snowflake. AWS (ECS Fargate, EC2, S3, RDS, ALB, CloudWatch), Docker, Terraform, Vercel, Datadog. Anthropic and OpenAI APIs, RAG, embeddings, reranking, structured outputs, eval harnesses, MCP, Mastra, Vercel AI SDK.
+
+## Swimming
+
+NCAA DIII swimmer, University of Chicago (2023–2026). 2x New York State Champion, All-American.
