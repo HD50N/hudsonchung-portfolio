@@ -693,17 +693,20 @@ a.leadership-org:hover { color: var(--accent); }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2px;
+  align-items: stretch;
 }
 
 /* Flip card shell */
 .project-card-flip {
   perspective: 1400px;
   min-height: 0;
+  height: 100%;
 }
 .project-card-inner {
   position: relative;
   width: 100%;
   min-height: 420px;
+  height: 100%;
   transform-style: preserve-3d;
   transition: transform 0.65s var(--ease);
 }
@@ -770,7 +773,7 @@ a.leadership-org:hover { color: var(--accent); }
   margin-bottom: 10px;
 }
 .project-card-flip .project-desc {
-  flex: 0 1 auto;
+  flex: 1;
   font-size: 12px;
   line-height: 1.6;
   margin-bottom: 14px;
@@ -793,6 +796,7 @@ a.leadership-org:hover { color: var(--accent); }
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  height: 100%;
   transition: background 0.3s, border-color 0.3s;
 }
 .project-card::before {
