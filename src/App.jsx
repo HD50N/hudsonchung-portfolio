@@ -14,13 +14,22 @@ function App() {
   const [activeSection, setActiveSection] = useState('home')
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light')
+  const [theme, setTheme] = useState('light')
+  const [themeLoaded, setThemeLoaded] = useState(false)
   const cursorRef = useRef(null)
+
+  // Read the saved theme after hydration so server and client markup match.
+  useEffect(() => {
+    const saved = localStorage.getItem('theme')
+    if (saved && saved !== theme) setTheme(saved)
+    setThemeLoaded(true)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
-    localStorage.setItem('theme', theme)
-  }, [theme])
+    if (themeLoaded) localStorage.setItem('theme', theme)
+  }, [theme, themeLoaded])
 
   useEffect(() => {
     const t = setTimeout(() => setLoading(false), 2000)
@@ -67,10 +76,9 @@ function App() {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
   }, [menuOpen])
 
-  if (loading) return <LoadingScreen />
-
   return (
     <>
+    {loading && <LoadingScreen />}
     <BackgroundAnimation theme={theme} />
     <div className="site-wrapper">
       <div ref={cursorRef} className="cursor-spotlight" />

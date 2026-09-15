@@ -70,10 +70,10 @@ export default function Experience() {
 
         <div className="exp-list">
           {EXPERIENCES.map(({ company, suffix, role, period, desc, tech, achievements, link, linkLabel, companyLink }, i) => (
-            <div key={company} className={`exp-card reveal reveal-d${Math.min(i + 1, 4)}`}>
+            <article key={company} className={`exp-card reveal reveal-d${Math.min(i + 1, 4)}`}>
               <div className="exp-header">
                 <div>
-                  <div className="exp-company">
+                  <h3 className="exp-company">
                     {companyLink
                       ? <a href={companyLink} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>{company}</a>
                       : company
@@ -81,11 +81,11 @@ export default function Experience() {
                     {suffix && (
                       <span className="exp-company-suffix">{suffix}</span>
                     )}
-                  </div>
+                  </h3>
                   <div className="exp-role-badge">{role}</div>
                   <div className="exp-desc">{desc}</div>
                 </div>
-                <div className="exp-date">{period}</div>
+                <time className="exp-date">{period}</time>
               </div>
               <div className="exp-body">
                 <ul className="exp-achievements">
@@ -100,7 +100,7 @@ export default function Experience() {
                   )}
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

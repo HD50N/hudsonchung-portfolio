@@ -61,7 +61,7 @@ export default function ProjectCard({ project, index }) {
   const frontContent = (
     <>
       <div className="project-num">0{index + 1}</div>
-      <div className="project-name">{name}</div>
+      <h3 className="project-name">{name}</h3>
       <div className="project-sub">{sub}</div>
       <blockquote className="project-pitch">{pitch}</blockquote>
       <p className="project-desc">{desc}</p>
@@ -77,16 +77,16 @@ export default function ProjectCard({ project, index }) {
   )
 
   if (!embed) {
-    return <div className={`project-card ${revealClass}`}>{frontContent}</div>
+    return <article className={`project-card ${revealClass}`}>{frontContent}</article>
   }
 
   return (
-    <div className={`project-card-flip ${revealClass}`}>
+    <article className={`project-card-flip ${revealClass}`}>
       <div className={`project-card-inner${flipped ? ' is-flipped' : ''}`}>
         <div className="project-card-face project-card-front">{frontContent}</div>
         <div className="project-card-face project-card-back">
           <div className="project-back-header">
-            <div className="project-name project-name--compact">{name}</div>
+            <h3 className="project-name project-name--compact">{name}</h3>
             <span className="project-embed-label project-embed-label--live">
               <span className="project-embed-live-dot" aria-hidden="true" />
               {embed.type === 'youtube' ? 'Demo' : 'Live preview'}
@@ -111,6 +111,6 @@ export default function ProjectCard({ project, index }) {
           </div>
         </div>
       </div>
-    </div>
+    </article>
   )
 }

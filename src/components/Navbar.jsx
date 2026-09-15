@@ -5,25 +5,31 @@ const NAV_ITEMS = [
   { id: 'swimming',   label: 'Swimming'   },
 ]
 
-const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+const scrollTo = (e, id) => {
+  e.preventDefault()
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+}
 
 export default function Navbar({ activeSection, scrolled, menuOpen, setMenuOpen, theme, setTheme }) {
   return (
     <header className={`navbar${scrolled ? ' scrolled' : ''}`}>
-      <div className="navbar-inner">
-        <div
+      <nav className="navbar-inner" aria-label="Primary">
+        <a
+          href="#home"
           className="navbar-logo"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          style={{ textDecoration: 'none' }}
+          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
         >
           HC<span>.</span>
-        </div>
+        </a>
 
         <ul className="navbar-links">
           {NAV_ITEMS.map(({ id, label }) => (
             <li key={id}>
               <a
+                href={`#${id}`}
                 className={activeSection === id ? 'active' : ''}
-                onClick={() => scrollTo(id)}
+                onClick={(e) => scrollTo(e, id)}
               >
                 {label}
               </a>
@@ -48,7 +54,7 @@ export default function Navbar({ activeSection, scrolled, menuOpen, setMenuOpen,
             <span /><span /><span />
           </button>
         </div>
-      </div>
+      </nav>
     </header>
   )
 }

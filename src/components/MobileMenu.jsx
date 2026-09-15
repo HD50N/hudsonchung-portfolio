@@ -8,16 +8,17 @@ const NAV_ITEMS = [
 const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
 export default function MobileMenu({ open, setOpen }) {
-  const handleNav = (id) => {
+  const handleNav = (e, id) => {
+    e.preventDefault()
     scrollTo(id)
     setOpen(false)
   }
 
   return (
-    <div className={`mobile-menu${open ? ' open' : ''}`}>
-      <nav>
+    <div className={`mobile-menu${open ? ' open' : ''}`} aria-hidden={!open}>
+      <nav aria-label="Mobile">
         {NAV_ITEMS.map(({ id, label }) => (
-          <a key={id} onClick={() => handleNav(id)}>
+          <a key={id} href={`#${id}`} onClick={(e) => handleNav(e, id)}>
             {label}
           </a>
         ))}

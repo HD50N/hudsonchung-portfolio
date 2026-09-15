@@ -79,7 +79,7 @@ export default function About() {
               <div className="about-photo-accent" />
             </div>
             <div className="about-edu-block">
-              <div className="about-edu-school">University of Chicago</div>
+              <h3 className="about-edu-school">University of Chicago</h3>
               <div className="about-edu-degree">B.S. Computer Science · B.A. Economics</div>
               <div className="about-edu-years">2023 — Dec 2026</div>
               <div className="about-edu-tag">
@@ -116,7 +116,7 @@ export default function About() {
             <div key={org} className="leadership-card">
               {link
                 ? <a href={link} target="_blank" rel="noopener noreferrer" className="leadership-org" style={{ textDecoration: 'none' }}>{org}</a>
-                : <div className="leadership-org">{org}</div>
+                : <h3 className="leadership-org">{org}</h3>
               }
               <div className="leadership-role-label">{role}</div>
               <div className="leadership-period">{period}</div>
