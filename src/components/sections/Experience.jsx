@@ -14,20 +14,6 @@ const EXPERIENCES = [
     ],
   },
   {
-    company: 'Reconcile',
-    suffix: null,
-    companyLink: 'https://parity-ashy.vercel.app',
-    role: 'Co-Founder',
-    period: 'Jan 2026 — May 2026',
-    desc: 'AI-assisted modernization platform for regional-bank Java/.NET integration estates',
-    tech: ['TypeScript', 'React', 'Python', 'Supabase', 'Docker'],
-    achievements: [
-      'Shipped a hybrid SaaS + in-network agent product enabling banks to inventory legacy middleware, extract behavioral specs with LLM pipelines, and generate REST/OpenAPI migration artifacts without moving production data off-prem',
-      'Designed outbound-only agent-to-control-plane architecture (Docker and GitHub install paths) so customer code stays inside the bank\'s network while coordination, billing, and dashboards run in the cloud',
-      'Built customer-facing web app with TypeScript, React, and Tailwind covering onboarding, agent status, service inventory, and end-to-end migration workflow across discovery → spec → codegen → validation stages',
-    ],
-  },
-  {
     company: 'Human Behavior',
     suffix: 'YC X25',
     role: 'Founding Engineer',

@@ -2,6 +2,15 @@ import ProjectCard from '../ProjectCard'
 
 const PROJECTS = [
   {
+    name: 'Reconcile',
+    sub: 'Co-Founder · Bank Modernization',
+    pitch: 'Modernize a bank\u2019s legacy middleware without its source code ever leaving the building.',
+    desc: 'AI-assisted modernization platform for regional-bank Java/.NET integration estates. LLM pipelines extract behavioral specs from legacy middleware and generate REST/OpenAPI artifacts, and an equivalence layer diffs legacy against generated responses field by field with a Claude divergence classifier. Designed around an outbound-only Docker agent running inside the bank\u2019s network, so coordination and dashboards live in the cloud while customer code never leaves the perimeter.',
+    tech: ['TypeScript', 'React', 'Python', 'Supabase', 'Docker'],
+    link: 'https://parity-ashy.vercel.app',
+    linkLabel: 'Live Site',
+  },
+  {
     name: 'Swarm Wallet',
     sub: 'AI Purchase Intelligence',
     pitch: 'Tell it what you want to buy—AI checks every store and tells you the best deal.',

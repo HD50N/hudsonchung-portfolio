@@ -60,7 +60,7 @@ export default function ProjectCard({ project, index }) {
 
   const frontContent = (
     <>
-      <div className="project-num">0{index + 1}</div>
+      <div className="project-num">{String(index + 1).padStart(2, '0')}</div>
       <h3 className="project-name">{name}</h3>
       <div className="project-sub">{sub}</div>
       <blockquote className="project-pitch">{pitch}</blockquote>
