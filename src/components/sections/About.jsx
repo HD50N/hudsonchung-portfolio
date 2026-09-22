@@ -80,7 +80,7 @@ export default function About() {
             </div>
             <div className="about-edu-block">
               <h3 className="about-edu-school">University of Chicago</h3>
-              <div className="about-edu-degree">B.S. Computer Science · B.A. Economics</div>
+              <div className="about-edu-degree">B.S. Computer Science (spec. Machine Learning)</div>
               <div className="about-edu-years">2023 — Dec 2026</div>
               <div className="about-edu-tag">
                 Building LLM Applications with Prompt Engineering (NVIDIA GTC)
@@ -90,12 +90,12 @@ export default function About() {
 
           <div className="reveal reveal-d2">
             <p className="about-bio">
-              <strong>Co-founding Marrow</strong>, installable expert judgment that runs on
+              <strong>Founder of Marrow</strong>, installable expert judgment that runs on
               your own connected tools. Previously co-founded <strong>Reconcile</strong>, an
               AI-assisted platform modernizing legacy bank infrastructure, and was{' '}
               <strong>Founding Engineer at Human Behavior (YC X25)</strong>. Senior at the
               University of Chicago pursuing{' '}
-              <strong>B.S. Computer Science and B.A. Economics</strong>.
+              <strong>B.S. Computer Science with a specialization in Machine Learning</strong>.
             </p>
 
             {SKILLS.map(({ title, skills }) => (

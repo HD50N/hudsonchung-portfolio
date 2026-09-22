@@ -101,7 +101,7 @@ function App() {
       </main>
       <footer className="site-footer">
         <div className="site-footer-inner">
-          <span className="font-mono text-muted">© 2025 Hudson Chung</span>
+          <span className="font-mono text-muted">© 2026 Hudson Chung</span>
           <a
             href="mailto:hudsonch@uchicago.edu"
             className="font-mono text-muted hover-accent"

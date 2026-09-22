@@ -16,7 +16,7 @@ export default function LoadingScreen() {
       <div className="loading-bar-track">
         <div className="loading-bar-fill" />
       </div>
-      <span className="loading-sub">Portfolio · 2025</span>
+      <span className="loading-sub">Portfolio · 2026</span>
     </div>
   )
 }

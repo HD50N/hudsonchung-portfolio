@@ -3,7 +3,7 @@ const EXPERIENCES = [
     company: 'Marrow',
     suffix: null,
     companyLink: 'https://usemarrow.co',
-    role: 'Co-Founder',
+    role: 'Founder',
     period: 'May 2026 — Present',
     desc: 'Installable expert judgment — creators compile a brain from their sources; users run it on their own connected tools',
     tech: ['Next.js', 'TypeScript', 'Supabase', 'Mastra', 'Composio MCP', 'Expo', 'Stripe'],

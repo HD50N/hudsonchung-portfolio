@@ -17,10 +17,10 @@ export default function Home() {
 
         <div className="hero-bottom reveal reveal-d2">
           <div className="hero-bio">
-            <p className="hero-role-label">Founding Engineer · YC X25 · UChicago</p>
+            <p className="hero-role-label">Founder at Marrow · Prev. YC X25 · UChicago</p>
             <p className="hero-bio-text">
               Building AI-powered platforms for the next generation of software.
-              Full-stack engineer, founder, and NCAA swimmer at the University of Chicago.
+              Full-stack engineer, founder, and former NCAA swimmer at the University of Chicago.
             </p>
             <p className="hero-contact">
               hudsonch@uchicago.edu · Chicago, IL
