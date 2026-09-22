@@ -11,7 +11,7 @@ const app = (
 )
 
 // Production HTML is pre-rendered at build time (see scripts/prerender.mjs),
-// so hydrate when markup is present; fall back to a client render in dev.
+// so hydrate when markup is present, and fall back to a client render in dev.
 if (root.hasChildNodes()) {
   hydrateRoot(root, app)
 } else {

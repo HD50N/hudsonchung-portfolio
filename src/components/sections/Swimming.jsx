@@ -56,7 +56,7 @@ export default function Swimming() {
   return (
     <section id="swimming">
       <div className="container">
-        <div className="section-eyebrow reveal">04 — Swimming</div>
+        <div className="section-eyebrow reveal">04 · Swimming</div>
         <h2 className="section-title reveal reveal-d1">
           In the<br />Water
         </h2>
@@ -75,7 +75,7 @@ export default function Swimming() {
 
           <div className="reveal reveal-d2">
             <div className="swim-times-wrap">
-              <div className="swim-times-label">Top Times — SwimCloud</div>
+              <div className="swim-times-label">Top Times · SwimCloud</div>
               <iframe
                 src="https://www.swimcloud.com/swimmer/1149977/iframe/?splashes_type=fastest"
                 title="SwimCloud top times"

@@ -24,7 +24,7 @@ const LEADERSHIP = [
     org: 'Korean Students Organization',
     link: 'https://ksouchicago.com',
     role: 'President + Webmaster',
-    period: 'Sep 2023 — Present',
+    period: 'Sep 2023 - Present',
     bullets: [
       'Built a full-stack e-commerce site with Next.js, TypeScript, Supabase, and Stripe + Printful integration for automated inventory management',
       'Organized an admin dashboard enabling non-technical members to manage the website and product orders',
@@ -35,7 +35,7 @@ const LEADERSHIP = [
     org: "UChicago Men's Swim Team",
     link: 'https://athletics.uchicago.edu/sports/mens-swimming-and-diving/roster/hudson-chung/7354',
     role: 'NCAA DIII Athlete',
-    period: 'Sep 2023 — Feb 2026',
+    period: 'Sep 2023 - Feb 2026',
     bullets: [
       "Balanced 25+ hours/week of practice with full-time coursework, contributing to the team's top UAA performance",
       'Developed strong communication, leadership, and goal-setting skills in a competitive team environment',
@@ -45,17 +45,17 @@ const LEADERSHIP = [
     org: 'Kappa Theta Pi (KTP)',
     link: 'https://uchicagoktp.com',
     role: 'Professional Tech Fraternity · Eta Class · Project Committee',
-    period: 'Apr 2024 — Present',
+    period: 'Apr 2024 - Present',
     bullets: [
       'Member of project committee, collaborating with brothers on technical initiatives and product development',
-      'Co-built Off The Dome — an AI-powered speech practice platform — with a fellow KTP member as a chapter project',
+      'Co-built Off The Dome, an AI-powered speech practice platform, with a fellow KTP member as a chapter project',
     ],
   },
   {
     org: 'UChicago Mycelium',
     link: 'https://mycelium.build',
     role: 'Builder Group · Member',
-    period: 'Jun 2025 — Present',
+    period: 'Jun 2025 - Present',
     bullets: [
       'Member of UChicago\'s student builder community, connecting with fellow founders and developers building products on campus',
     ],
@@ -66,7 +66,7 @@ export default function About() {
   return (
     <section id="about">
       <div className="container">
-        <div className="section-eyebrow reveal">01 — About</div>
+        <div className="section-eyebrow reveal">01 · About</div>
         <h2 className="section-title reveal reveal-d1">
           About<br />Me
         </h2>
@@ -81,7 +81,7 @@ export default function About() {
             <div className="about-edu-block">
               <h3 className="about-edu-school">University of Chicago</h3>
               <div className="about-edu-degree">B.S. Computer Science (spec. Machine Learning)</div>
-              <div className="about-edu-years">2023 — Dec 2026</div>
+              <div className="about-edu-years">2023 - Dec 2026</div>
               <div className="about-edu-tag">
                 Building LLM Applications with Prompt Engineering (NVIDIA GTC)
               </div>

@@ -13,8 +13,8 @@ const PROJECTS = [
   {
     name: 'Swarm Wallet',
     sub: 'AI Purchase Intelligence',
-    pitch: 'Tell it what you want to buy—AI checks every store and tells you the best deal.',
-    desc: 'LLM planner spawns parallel Browserbase agents to scrape live listings; a Next.js dashboard streams replays and price spread over WebSocket while a coordinator synthesizes a buy-now vs wait verdict. Optional Snowflake memory for price history and semantic recall from past swarms—built for Uncommon Hacks 2026.',
+    pitch: 'Tell it what you want to buy, and AI checks every store and tells you the best deal.',
+    desc: 'LLM planner spawns parallel Browserbase agents to scrape live listings. A Next.js dashboard streams replays and price spread over WebSocket while a coordinator synthesizes a buy-now vs wait verdict. Optional Snowflake memory for price history and semantic recall from past swarms. Built for Uncommon Hacks 2026.',
     tech: ['Next.js', 'TypeScript', 'Node.js', 'WebSocket', 'Browserbase', 'Stagehand', 'Snowflake'],
     link: 'https://github.com/feixiangpeng/Swarm_Wallet',
     linkLabel: 'GitHub',
@@ -25,7 +25,7 @@ const PROJECTS = [
     name: 'SwarmSell',
     sub: 'Multi-Platform Seller Launch Kit',
     pitch: 'One product description → full launch kit in ~60 seconds.',
-    desc: '15-agent pipeline (SCOUT → PRICE → WRITE → GROW) scrapes Amazon, Etsy, eBay, Walmart, and Best Buy via Browserbase, then generates pricing, platform-native listings, and marketing assets with review gates between phases. OpenAI for extraction, Wafer/Qwen for generation—built for Uncommon Hacks 2026.',
+    desc: '15-agent pipeline (SCOUT → PRICE → WRITE → GROW) scrapes Amazon, Etsy, eBay, Walmart, and Best Buy via Browserbase, then generates pricing, platform-native listings, and marketing assets with review gates between phases. OpenAI for extraction, Wafer/Qwen for generation. Built for Uncommon Hacks 2026.',
     tech: ['Next.js', 'React', 'TypeScript', 'Browserbase', 'Stagehand', 'OpenAI', 'Vercel AI SDK'],
     link: 'https://github.com/HD50N/swarmsell',
     linkLabel: 'GitHub',
@@ -34,7 +34,7 @@ const PROJECTS = [
     name: 'Prefetch',
     sub: 'Predictive Inference Infrastructure',
     pitch: 'AI that pre-warms context before you hit send.',
-    desc: 'Observes IDE, file, and calendar signals to predict the next task and speculatively prep retrieval and embeddings before the prompt arrives. FastAPI + WebSocket dashboard compares warm vs cold paths in real time; Wafer Pass inference with SQLite/Snowflake memory—built for Uncommon Hacks 2026.',
+    desc: 'Observes IDE, file, and calendar signals to predict the next task and speculatively prep retrieval and embeddings before the prompt arrives. FastAPI + WebSocket dashboard compares warm vs cold paths in real time. Wafer Pass inference with SQLite/Snowflake memory. Built for Uncommon Hacks 2026.',
     tech: ['Next.js', 'FastAPI', 'Python', 'WebSockets', 'Wafer Pass', 'Snowflake', 'TypeScript'],
     link: 'https://github.com/HD50N/prefetch',
     linkLabel: 'GitHub',
@@ -43,7 +43,7 @@ const PROJECTS = [
     name: 'Shu Xiang',
     sub: 'Bilingual Filing Agent',
     pitch: 'Talk through a government form in your own language and walk away with the paperwork filled out.',
-    desc: 'Voice agent that helps non-English-speaking immigrants file US government forms in their native language. Python asyncio orchestrator with Playwright, a bilingual overlay injected onto live government pages, ElevenLabs TTS/STT with Claude Haiku intent extraction, and a bilingual PDF generator — end-to-end in under 7 seconds.',
+    desc: 'Voice agent that helps non-English-speaking immigrants file US government forms in their native language. Python asyncio orchestrator with Playwright, a bilingual overlay injected onto live government pages, ElevenLabs TTS/STT with Claude Haiku intent extraction, and a bilingual PDF generator, end to end in under 7 seconds.',
     tech: ['Python', 'Playwright', 'Claude API', 'ElevenLabs', 'Next.js'],
     link: 'https://github.com/HD50N/shu-xiang',
     linkLabel: 'GitHub',
@@ -63,7 +63,7 @@ const PROJECTS = [
     name: 'Verd',
     sub: 'Startup Idea Validator',
     pitch: 'Drop in a startup idea and get an honest read on whether it’s worth building.',
-    desc: 'Scores startup ideas using a multi-agent OpenAI pipeline with Zod-validated structured outputs — criterion-by-criterion breakdown, evidence notes, competitor sketches, and community/trend signals. Includes Supabase auth, Stripe Pro subscriptions, HMAC-signed guest limits, and a validation module with Reddit enrichment and LLM-synthesized reports.',
+    desc: 'Scores startup ideas using a multi-agent OpenAI pipeline with Zod-validated structured outputs, giving a criterion-by-criterion breakdown, evidence notes, competitor sketches, and community/trend signals. Includes Supabase auth, Stripe Pro subscriptions, HMAC-signed guest limits, and a validation module with Reddit enrichment and LLM-synthesized reports.',
     tech: ['Next.js', 'TypeScript', 'OpenAI API', 'Supabase', 'Stripe'],
     link: 'https://getverd.vercel.app',
     linkLabel: 'getverd.vercel.app',
@@ -110,7 +110,7 @@ export default function Projects() {
   return (
     <section id="projects">
       <div className="container">
-        <div className="section-eyebrow reveal">03 — Projects</div>
+        <div className="section-eyebrow reveal">03 · Projects</div>
         <h2 className="section-title reveal reveal-d1">
           Selected<br />Work
         </h2>

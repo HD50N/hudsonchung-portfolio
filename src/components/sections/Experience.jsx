@@ -4,20 +4,20 @@ const EXPERIENCES = [
     suffix: null,
     companyLink: 'https://usemarrow.co',
     role: 'Founder',
-    period: 'May 2026 — Present',
-    desc: 'Installable expert judgment — creators compile a brain from their sources; users run it on their own connected tools',
+    period: 'May 2026 - Present',
+    desc: 'Installable expert judgment. Creators compile a brain from their sources, users run it on their own connected tools',
     tech: ['Next.js', 'TypeScript', 'Supabase', 'Mastra', 'Composio MCP', 'Expo', 'Stripe'],
     achievements: [
-      'Built the Mastra agent runtime and Composio MCP tool layer with an execution policy — draft-only by default, read-only tool sessions, explicit confirmation before live writes — so agents act on Slack, Stripe, GitHub, and Gmail with the user\'s own credentials',
+      'Built the Mastra agent runtime and Composio MCP tool layer with an execution policy of draft-only by default, read-only tool sessions, and explicit confirmation before live writes, so agents act on Slack, Stripe, GitHub, and Gmail with the user\'s own credentials',
       'Built the knowledge pipeline end to end: multi-source ingestion (RSS, Playwright, social OAuth) → content-hash dedupe → chunk/embed → reranked RAG with citations, plus an LLM "train brain" pipeline that compiles persona, rules, and skills from a creator\'s work',
-      'Built an eval harness with graders, hard-gate assertions, locked holdouts, and blinded baseline comparison to gate capability readiness; shipped durable DAG workflows with idempotent webhook triggers, timezone-aware cron dispatch, and replay — plus an Expo mobile app with full API parity',
+      'Built an eval harness with graders, hard-gate assertions, locked holdouts, and blinded baseline comparison to gate capability readiness. Shipped durable DAG workflows with idempotent webhook triggers, timezone-aware cron dispatch, and replay, plus an Expo mobile app with full API parity',
     ],
   },
   {
     company: 'Human Behavior',
     suffix: 'YC X25',
     role: 'Founding Engineer',
-    period: 'May 2025 — May 2026',
+    period: 'May 2025 - May 2026',
     desc: 'AI-powered session-replay platform uncovering user behavior insights',
     companyLink: 'https://humanbehavior.co',
     link: 'https://github.com/humanbehavior-gh/humanbehavior-js',
@@ -34,7 +34,7 @@ const EXPERIENCES = [
     suffix: null,
     companyLink: 'https://getfoodfight.com/',
     role: 'Full Stack Engineer Intern',
-    period: 'Jun 2024 — Sep 2024',
+    period: 'Jun 2024 - Sep 2024',
     desc: 'Social sports gaming platform using food and beverages as currency',
     tech: ['EC2', 'Python', 'MySQL', 'Microservices'],
     achievements: [
@@ -49,7 +49,7 @@ export default function Experience() {
   return (
     <section id="experience">
       <div className="container">
-        <div className="section-eyebrow reveal">02 — Experience</div>
+        <div className="section-eyebrow reveal">02 · Experience</div>
         <h2 className="section-title reveal reveal-d1">
           Where I've<br />Been
         </h2>
