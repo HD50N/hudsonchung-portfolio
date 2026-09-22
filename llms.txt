@@ -1,6 +1,6 @@
 # Hudson Chung
 
-> Software engineer and founder building AI-powered products. Founder of Marrow (May 2026–present). Previously co-founder of Reconcile (Jan–May 2026) and founding engineer at Human Behavior, YC X25 (May 2025–May 2026). B.S. Computer Science (Machine Learning), University of Chicago, expected Dec 2026. Based in Chicago, IL.
+> Software engineer and founder building AI-powered products. Founder of Marrow (May 2026–present). Previously co-founder of Reconcile (Jan–May 2026) and founding engineer at Human Behavior, YC X25 (May 2025–May 2026). B.S. Computer Science (spec. Machine Learning) and B.A. Economics (spec. Business), University of Chicago, expected Dec 2026. Based in Chicago, IL.
 
 - Site: https://hd50n.github.io/hudsonchung-portfolio/
 - GitHub: https://github.com/HD50N
